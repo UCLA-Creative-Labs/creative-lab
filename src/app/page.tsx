@@ -8,10 +8,13 @@ export default function Home() {
   const [img, setImg] = useState<EventTarget & HTMLImageElement>(null);
 
   useEffect(() => {
+    const width = canvasEl.current.clientWidth;
+    const height = canvasEl.current.clientHeight;
+
     const c = new fabric.Canvas(canvasEl.current, {
-      height: 800,
-      width: 800,
-      backgroundColor: 'pink',
+      width: width,
+      height: height,
+      backgroundColor: '#ADD8E6',
       preserveObjectStacking: true
     });
 
@@ -40,13 +43,15 @@ export default function Home() {
   }, [])
 
   return (
-    <div>
+    <div className="w-full flex-col">
       <div className="flex justify-center">
         <img src="/orange_thing.svg" />
         <img src="/pink_thing.svg" />
         <img src="/purple_thing.svg" />
       </div>
-      <canvas ref={canvasEl}/>
+      <div className="w-full flex justify-center">
+        <canvas className="w-1/3 aspect-square" ref={canvasEl}/>
+      </div>
     </div>
   )
 }
