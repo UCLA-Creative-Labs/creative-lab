@@ -34,6 +34,7 @@ export default function Home() {
           top: y - (img.height/2),
         })
         c.add(object);
+        console.log(c.toSVG());
       })
     });
 
