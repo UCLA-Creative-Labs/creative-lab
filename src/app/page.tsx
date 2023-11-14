@@ -14,7 +14,7 @@ export default function Home() {
     const c = new fabric.Canvas(canvasEl.current, {
       width: width,
       height: height,
-      backgroundColor: '#ADD8E6',
+      backgroundColor: '#242423',
       preserveObjectStacking: true
     });
 
